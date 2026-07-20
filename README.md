@@ -101,23 +101,12 @@ default-1x8h9   Ready    <none>   2m59s   v1.36.0
 
 ```bash
 kubectl apply --server-side --force-conflicts \
-  -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.4.1/experimental-install.yaml
-```
-
-You should see:
-
-```bash
-customresourcedefinition.apiextensions.k8s.io/backendtlspolicies.gateway.networking.k8s.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io serverside-applied
+  -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/experimental-install.yaml
 ```
 
 ```bash
 helm install eg oci://docker.io/envoyproxy/gateway-helm \
-  --version v1.7.1 \
+  --version v1.8.2 \
   -n envoy-gateway-system \
   --create-namespace \
   --skip-crds
@@ -130,7 +119,7 @@ kubectl apply -f infra/envoy-gateway/gatewayclass.yaml
 2. Install cert-manager:
 
 ```bash
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.3/cert-manager.yaml
+kubectl apply --server-side -f https://github.com/cert-manager/cert-manager/releases/download/v1.21.0/cert-manager.yaml
 ```
 
 ```bash
