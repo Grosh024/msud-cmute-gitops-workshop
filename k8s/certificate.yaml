@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: paper-tls
 spec:
-  # Replace <YOUR_GITHUB_USERNAME> with the same value used in your DNS record.
+  # Replace grosh024 with the same value used in your DNS record.
   # Note: Minecraft is plain TCP and does not consume this cert. It is here
   # to demonstrate the cert-manager + DNS-01 flow end to end.
   secretName: paper-tls
@@ -18,7 +18,7 @@ kind: Certificate
 metadata:
   name: argocd-tls
 spec:
-  # Replace <YOUR_GITHUB_USERNAME>. This cert IS used by the Gateway's HTTPS listener
+  # Replace grosh024. This cert IS used by the Gateway's HTTPS listener
   # to terminate TLS for the ArgoCD UI.
   secretName: argocd-tls
   dnsNames:

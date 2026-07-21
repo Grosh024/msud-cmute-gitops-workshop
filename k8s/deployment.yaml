@@ -14,13 +14,13 @@ spec:
       labels:
         app: paper
       annotations:
-        configmap-hash: "1"
+        configmap-hash: "3"
     spec:
       securityContext:
         fsGroup: 1000
       containers:
         - name: paper
-          # Replace <YOUR_GITHUB_USERNAME>
+          # Replace grosh024
           # MAKE SURE THIS IS LOWERCASE OTHERWISE YOU'LL GET AN ERROR :)
           image: ghcr.io/grosh024/msud-cmute-gitops-workshop:latest
           ports:
